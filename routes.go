@@ -12,6 +12,7 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/about", api.AboutHandler)
 	r.HandleFunc("/", api.MainPageHandler)
+	r.HandleFunc("/credentials", api.SaveCredentials).Methods("POST")
 	http.Handle("/", r)
 	bigtable.EmulateBigTable()
 
