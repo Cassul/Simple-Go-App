@@ -1,6 +1,8 @@
 package mongo
 
 import (
+	"github.com/cassul/root"
+	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
 

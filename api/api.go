@@ -5,7 +5,16 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/cassul/mongo"
 )
+
+var myMongo mongo.UserService
+
+type credentials struct {
+	Email    string `json: "email"`
+	Password string `json: "password"`
+}
 
 func AboutHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Oy!")
@@ -28,5 +37,6 @@ func SaveCredentials(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err)
 	}
+	g
 	fmt.Printf("response - %v", cred)
 }
